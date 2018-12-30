@@ -82,10 +82,19 @@ class Candidates extends Person{
             }
         }
         ?>
-        
-        
-        
         <form action="resultados.php" method="post">
+        <?php
+        
+        $fp = fopen("questions.date", "r") or die("No se pudo abrir el archivo.");
+        while (!feof($fp)){
+            $linea = fgets($fp);
+            echo "<label>".$linea."</label><br />";
+            //for
+        }
+        fclose($fp);
+        ?>
+        <?php
+        /*
             <label></label>
             <input type="radio" name="pregunta1a" value="">
             <input type="radio" name="pregunta1b">
@@ -137,6 +146,9 @@ class Candidates extends Person{
             <input type="radio" name="pregunta10c">
             <input type="radio" name="pregunta10d">
             <input type="submit" value="Enviar respuestas">
+         * 
+         */
+        ?>
         </form>
         
         <?php
