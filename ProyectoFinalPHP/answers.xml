@@ -7,53 +7,73 @@ and open the template in the editor.
 
 
 <root>
-    6
-    17
-    19
-    21
+    <pregunta>
+        <a>6</a>
+        <b>17</b>
+        <c>19</c>
+        <d>21</d>
+    </pregunta>
     
-    Todos los coleccionistas de sellos son arquitectos.
-    Los arquitectos no son personas aburridas.
-    Ningún coleccionista de sellos es una persona aburrida.
-    Algunas personas aburridas son arquitectos.
+    <pregunta>
+        <a>Todos los coleccionistas de sellos son arquitectos.</a>
+        <b>Los arquitectos no son personas aburridas.</b>
+        <c>Ningún coleccionista de sellos es una persona aburrida.</c>
+        <d>Algunas personas aburridas son arquitectos.</d>
+    </pregunta>
     
-    La gente bebe demasiado alcohol.
-    La gente no debería conducir por encima del límite legal.
-    Hay un 20% de probabilidades de causar un accidente cuando se conduce bebido.
-    El alcohol disminuye las habilidades de conducción.
+    <pregunta>
+        <a>La gente bebe demasiado alcohol.</a>
+        <b>La gente no debería conducir por encima del límite legal.</b>
+        <c>Hay un 20% de probabilidades de causar un accidente cuando se conduce bebido.</c>
+        <d>El alcohol disminuye las habilidades de conducción.</d>
+    </pregunta>
     
-    1250
-    250
-    45
-    30
+    <pregunta>
+        <a>1250</a>
+        <b>250</b>
+        <c>45</c>
+        <d>30</d>
+    </pregunta>
     
-    1
-    6
-    30
-    No se puede saber.
+    <pregunta>
+        <a>1</a>
+        <b>6</b>
+        <c>30</c>
+        <d>No se puede saber.</d>
+    </pregunta>
     
-    X
-    5s
-    X
-    X
+    <pregunta>
+        <a>X</a>
+        <b>5s</b>
+        <c>X</c>
+        <d>X</d>
+    </pregunta>
     
-    X
-    X
-    120s
-    X
+    <pregunta>
+        <a>X</a>
+        <b>X</b>
+        <c>120s</c>
+        <d>X</d>
+    </pregunta>
     
-    Encendemos el interruptor A unos 5min. Apagamos el interruptor A y encendemos el B.
-    Encendemos los interruptores A y B 5min. Apagamos los interruptores A y B, y encendemos el C.
-    Encendemos los interruptores A y B.
-    Encendemos el interruptor A.
+    <pregunta>
+        <a>Encendemos el interruptor A unos 5min. Apagamos el interruptor A y encendemos el B.</a>
+        <b>Encendemos los interruptores A y B 5min. Apagamos los interruptores A y B, y encendemos el C.</b>
+        <c>Encendemos los interruptores A y B.</c>
+        <d>Encendemos el interruptor A.</d>
+    </pregunta>
     
-    X
-    X
-    X
-    X
+    <pregunta>
+        <a>X</a>
+        <b>X</b>
+        <c>X</c>
+        <d>X</d>
+    </pregunta>
     
-    X
-    X
-    X
-    X
+    <pregunta>
+        <a>X</a>
+        <b>X</b>
+        <c>X</c>
+        <d>X</d>
+    </pregunta>
 </root>

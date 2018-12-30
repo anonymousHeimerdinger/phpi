@@ -70,6 +70,8 @@ class Candidates extends Person{
             $_SESSION['pregunta8']='x';
             $_SESSION['pregunta9']='x';
             $_SESSION['pregunta10']='x';
+            
+            
         } else {
             if ($_SESSION && isset($_SESSION["name"], $_SESSION["dni"])){
                 $candidate = new Candidates($_SESSION["name"], $_SESSION["dni"]);
