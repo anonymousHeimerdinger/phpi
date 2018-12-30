@@ -1,0 +1,28 @@
+body{
+    margin: 2% 15%;
+    font-size: 18px;
+    font-family: calibri;
+}
+label{
+    display: block;
+    margin: 15px 0px 10px;
+}
+
+.block{
+    margin: 5px 0px 5px 20px;
+}
+
+.boton{
+    margin: auto;
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 8%;
+}
+
+#btn_create_sesion{
+    margin-top: 30px;
+}
+
+.error{
+    color:red;
+}

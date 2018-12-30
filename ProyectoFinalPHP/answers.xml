@@ -43,17 +43,17 @@ and open the template in the editor.
     </pregunta>
     
     <pregunta>
-        <a>X</a>
+        <a>No vuelven a coincidir.</a>
         <b>5s</b>
-        <c>X</c>
-        <d>X</d>
+        <c>60s</c>
+        <d>12s</d>
     </pregunta>
     
     <pregunta>
-        <a>X</a>
-        <b>X</b>
+        <a>60s</a>
+        <b>180s</b>
         <c>120s</c>
-        <d>X</d>
+        <d>10s</d>
     </pregunta>
     
     <pregunta>
@@ -64,16 +64,16 @@ and open the template in the editor.
     </pregunta>
     
     <pregunta>
-        <a>X</a>
-        <b>X</b>
-        <c>X</c>
-        <d>X</d>
+        <a>3392,86 GB</a>
+        <b>892,86 GB</b>
+        <c>750 GB</c>
+        <d>3250 GB</d>
     </pregunta>
     
     <pregunta>
-        <a>X</a>
-        <b>X</b>
-        <c>X</c>
-        <d>X</d>
+        <a>2500+25x</a>
+        <b>2500*95/(100-x)</b>
+        <c>[2500*95/(100-x)]-2500</c>
+        <d>25x</d>
     </pregunta>
 </root>

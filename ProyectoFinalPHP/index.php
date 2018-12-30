@@ -8,6 +8,9 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>Test</title>
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/main.css" />
+
         <!-- jQuery -->
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <!-- jQuery Validation-->
@@ -15,15 +18,20 @@ and open the template in the editor.
     </head>
     <body>
         <form action="test.php" method="post">
-            <label>Nombre: </label>
-            <input type="text" name="name" id="name">
-            <label>DNI: </label>
-            <input type="text" name="dni" id="dni">
-            <script type="text/javascript">
-                //var dni = document.getElementById("dni").innerHTML;
-            </script>
-            <input type="submit" value="Crear sesión">
+            <div class="block">
+                <label>Nombre: </label>
+                <input type="text" name="name" id="name">
+            </div>
+            <div class="block">
+                <label>DNI: </label>
+                <input type="text" name="dni" id="dni">
+            </div>
+            <input type="submit" value="Crear sesión" class="block" id="btn_create_sesion">
         </form>
+        
+        <script type="text/javascript">
+            //var dni = document.getElementById("dni").innerHTML;
+        </script>
         
         <?php
         // put your code here
