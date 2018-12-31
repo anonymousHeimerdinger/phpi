@@ -17,25 +17,30 @@ and open the template in the editor.
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
     </head>
     <body>
-        <form action="test.php" method="post">
-            <div class="block">
-                <label>Nombre: </label>
-                <input type="text" name="name" id="name">
-            </div>
-            <div class="block">
-                <label>DNI: </label>
-                <input type="text" name="dni" id="dni">
-            </div>
-            <input type="submit" value="Crear sesión" class="block" id="btn_create_sesion">
-        </form>
+        <div id="wrapper">
+            
+            <?php
+                session_start();
+                session_destroy();
+            ?>
+            
+            <form action="test.php" method="post">
+                <div class="block">
+                    <label>Nombre: </label>
+                    <input type="text" name="name" id="name">
+                </div>
+                <div class="block">
+                    <label>DNI: </label>
+                    <input type="text" name="dni" id="dni">
+                </div>
+                <input type="submit" value="Crear sesión" class="block" id="btn_create_sesion">
+            </form>
+        </div>
+        
         
         <script type="text/javascript">
             //var dni = document.getElementById("dni").innerHTML;
         </script>
-        
-        <?php
-        // put your code here
-        ?>
     </body>
     <script type="text/javascript">
         $(document).ready(function() {

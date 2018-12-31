@@ -10,16 +10,16 @@ class Person{
     public $name;
     private $dni;
     
-    function _construct($_name, $_dni){
+    function __construct($_name, $_dni){
         $this->name = $_name;
         $this->dni = $_dni;
     }
     
-    function getName(){
-        return Person::$name;
+    public function getName(){
+        return $this->name;
     }
     
-    function getDni(){
+    public function getDni(){
         return $this->dni;
     }
 }
@@ -27,11 +27,11 @@ class Person{
 class Candidates extends Person{
     public $qualification;
     
-    function getQualification(){
-        return $this->qualification;
+    public function getQualification(){
+        echo $this->qualification;
     }
     
-    function setQualification($qualification){
+    public function setQualification($qualification){
         $this->qualification = $qualification;
     }
 }
@@ -51,10 +51,12 @@ class Candidates extends Person{
     <body>
         <?php
         session_start();
-        
+        $candidate;
         
         if($_POST && isset($_POST["name"], $_POST["dni"])){
-            
+            if (isset($_COOKIE[$_POST["dni"]]) && !is_null($_COOKIE[$_POST["dni"]])){
+                die("Su DNI ya ha sido calificado.");
+            }
             $candidate = new Candidates($_POST["name"], $_POST["dni"]);
             $_SESSION['name']=$_POST['name'];
             $_SESSION['dni']=$_POST['dni'];
@@ -79,42 +81,57 @@ class Candidates extends Person{
                 die("No se ha recibido nombre y DNI.");
             }
         }
+        
+        
         ?>
-        <form action="resultados.php" method="get">
-            <?php
-
-            $fp = fopen("questions.date", "r") or die("No se pudo abrir el archivo.");
-            $root = simplexml_load_file("answers.xml");
-            $i = 1;
-            foreach($root as $pregunta){
-                if (!feof($fp)){
-                    $linea = fgets($fp);
-                    ?>
-                    <label for=<?php echo "pregunta".$i ?>><?php echo $i.' - '.$linea?></label>
+        
+        <div id="wrapper">
+            <hearder>
+                <h1><?php echo "Nombre: ".$candidate->getName().", DNI: ".$candidate->getDni() ?><a href="index.php">Log out</a></h1>
+                
+            </hearder>
+            <main>
+                <form action="resultados.php" method="get">
                     <?php
-                }
-                ?>
-                    <div class="block">
-                        <input type="radio" name=<?php echo "pregunta".$i ?> value="a" id=<?php echo "pregunta".$i ?>><?php echo $a = $pregunta->a?>
-                    </div>
-                    <div class="block">
-                        <input type="radio" name=<?php echo "pregunta".$i ?> value="b" id=<?php echo "pregunta".$i ?>><?php echo $b = $pregunta->b?>
-                    </div>
-                    <div class="block">
-                        <input type="radio" name=<?php echo "pregunta".$i ?> value="c" id=<?php echo "pregunta".$i ?>><?php echo $c = $pregunta->c?>
-                    </div>
-                    <div class="block">
-                        <input type="radio" name=<?php echo "pregunta".$i ?> value="d" id=<?php echo "pregunta".$i ?>><?php echo $d = $pregunta->d?>
-                    </div>
 
-                <?php
-                $i++;
-            }
+                    $fp = fopen("questions.date", "r") or die("No se pudo abrir el archivo.");
+                    $root = simplexml_load_file("answers.xml");
+                    $i = 1;
+                    foreach($root as $pregunta){
+                        if (!feof($fp)){
+                            $linea = fgets($fp);
+                            ?>
+                            <label for=<?php echo "pregunta".$i ?>><?php echo $i.' - '.$linea?></label>
+                            <?php
+                        }
+                        ?>
+                            <div class="block">
+                                <input type="radio" name=<?php echo "pregunta".$i ?> value="a" id=<?php echo "pregunta".$i ?>><?php echo $a = $pregunta->a?>
+                            </div>
+                            <div class="block">
+                                <input type="radio" name=<?php echo "pregunta".$i ?> value="b" id=<?php echo "pregunta".$i ?>><?php echo $b = $pregunta->b?>
+                            </div>
+                            <div class="block">
+                                <input type="radio" name=<?php echo "pregunta".$i ?> value="c" id=<?php echo "pregunta".$i ?>><?php echo $c = $pregunta->c?>
+                            </div>
+                            <div class="block">
+                                <input type="radio" name=<?php echo "pregunta".$i ?> value="d" id=<?php echo "pregunta".$i ?>><?php echo $d = $pregunta->d?>
+                            </div>
 
-            fclose($fp);
-            ?>
-                    <input type="submit" value="Enviar respuestas" class="boton">
-        </form>
+                        <?php
+                        $i++;
+                    }
+
+                    fclose($fp);
+                    ?>
+                            <input type="submit" value="Enviar respuestas" class="boton">
+                </form>
+            </main>
+        </div>
+        
+        
+        
+        
     </body>
     <script type="text/javascript">
         $(document).ready(function() {
